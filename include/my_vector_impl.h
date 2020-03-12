@@ -95,9 +95,9 @@ void my_vector<T>::reserve(std::size_t n) {
 	if(capacity_ >= n || n == 0) {
 		return;
 	}
-	capacity_ = new_capacity(n);
+	size_t new_capacity_ = new_capacity(n);
 	if(array_ != nullptr) {
-		T* new_array = (T*)new uint8_t[capacity_ * sizeof(T)];
+		T* new_array = (T*)new uint8_t[new_capacity_ * sizeof(T)];
 		array_copy(new_array);
 		size_t old_size = size_;
 		free();
@@ -105,8 +105,9 @@ void my_vector<T>::reserve(std::size_t n) {
 		size_ = old_size;
 	}
 	else {
-		array_ = (T*)new uint8_t[capacity_ * sizeof(T)];
+		array_ = (T*)new uint8_t[new_capacity_ * sizeof(T)];
 	}
+	capacity_ = new_capacity_;
 }
 
 template <typename T>
