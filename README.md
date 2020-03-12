@@ -1,13 +1,13 @@
 # Vector
-# My implementation of std::vector
+## My implementation of std::vector
 
-## Run command: ./my_vector
+### Run command: ./my_vector
 
-## Allowed types
+### Allowed types
 
 Works exactly for CopyConstructible and Destructible types of template
 
-## Operations for all allowed types:
+### Operations for all allowed types:
 
 default constructor
 
@@ -33,13 +33,13 @@ pop_back
 
 clear
 
-## Operations for only Destructible types:
+### Operations for only Destructible types:
 
 constructor with std::size_t n parameter (initializing with default T())
 
 resize
 
-## Semantics
+### Semantics
 
 Semantics of all operations with my_vector match semantics the same operations with std::vector
 
